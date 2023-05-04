@@ -1,0 +1,12 @@
+# Несколько параметров функции #,
+
+power = (x, y ->
+    if (equal y 1) (
+        x
+    ) (
+        mul x (power x !(minus y 1))
+    )
+),
+
+res <- power 2 10,
+print res

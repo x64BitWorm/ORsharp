@@ -1,0 +1,34 @@
+# Печатаем последовательность простых чисел #,
+
+mods = (x, y ->
+    d = div x y,
+    minus x (mul d y)
+),
+
+isPrime = (x ->
+    while (i ->
+        if (equal i (minus x 2)) (
+            break 1
+        ) (
+            if (mods x !(plus i 2)) (
+                0
+            ) (
+                break -1
+            )
+        )
+    )
+),
+
+getPrimesFrom = (n ->
+    while (i ->
+        rn <- plus i n,
+        res <- isPrime rn,
+        if (equal res 1) (
+            (_ -> print rn) _
+        ) (
+            0
+        )
+    )
+),
+
+getPrimesFrom 2

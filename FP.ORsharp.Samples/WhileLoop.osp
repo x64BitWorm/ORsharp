@@ -1,0 +1,18 @@
+# Цикл While
+В данном примере считывание происходит до тех пор пока не будет получено положительное число
+#,
+
+readUntilPositive = (_ ->
+    while (i ->
+        current <- input _,
+        if (bigger current 0) (
+            break current
+        ) (
+            0
+        )
+    )
+),
+
+res <- readUntilPositive _,
+print "result:",
+print res

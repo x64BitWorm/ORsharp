@@ -1,0 +1,39 @@
+﻿variableName = [_ r '^(?<name>[0-9a-zA-Z_]+)']
+variables = [_ p variableName]
+variables = [_ p variableName] [_ r '^\s*,\s*'] [next p variables]
+variable = [_ p variableName] [_ r '^\s*=\s*'] [entry p expression]
+
+# Number part
+expressionPart = [type r '(?<number>^)'] [_ r '^(?<part>-?[0-9]+)']
+# Quoted part
+expressionPart = [type r '(?<value>^)'] [_ r '^"(?<part>[^"]+)"']
+# General part
+expressionPart = [type r '(?<value>^)'] [_ r '^(?<part>[^\s,=\(\)<>"]+)']
+# Sub part
+expressionPart = [type r '(?<expression>^)'] [flags r '^\s*(?<expand>\!?)\(\s*'] [entry p expressionParts] [_ r '^\s*\)']
+# Function
+expressionPart = [type r '(?<function>^)'] [_ r '^\s*\(\s*'] [arguments p variables] [_ r '^\s*->\s*'] [_ p funcBody] [_ r '^\s*\)']
+expressionParts = [_ p expressionPart]
+expressionParts = [_ p expressionPart] [_ r '^\s+'] [next p expressionParts]
+
+expand = [_ p variableName] [_ r '^\s*<-\s*'] [entry p expression]
+
+expression = [_ p expressionParts]
+
+comment = [_ r '^#(?<text>[^#]*)#']
+
+# Comment started with 'hashtag' symbol
+operation = [type r '(?<comment>^)'] [entry p comment]
+# Chained expressions (function and arguments)
+operation = [type r '(?<expression>^)'] [entry p expression]
+# Variable declaration
+operation = [type r '(?<variable>^)'] [entry p variable]
+# Expand declaration
+operation = [type r '(?<expand>^)'] [entry p expand]
+
+# Comma separated operations
+operations = [_ p operation]
+operations = [_ p operation] [_ r '^\s*,\s*'] [next p operations]
+
+# Source code entry
+funcBody = [operations p operations] [_ r '^\s*']

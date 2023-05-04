@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32929.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FP.ORsharp.Worker", "FP.ORsharp\FP.ORsharp.Worker.csproj", "{195CADA6-7431-4A33-910A-9D31DEB4E7DA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FP.ORsharp.Base", "FP.ORsharp.Base\FP.ORsharp.Base.csproj", "{086B3D15-9626-4390-8E02-970C79C1EB6C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{195CADA6-7431-4A33-910A-9D31DEB4E7DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{195CADA6-7431-4A33-910A-9D31DEB4E7DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{195CADA6-7431-4A33-910A-9D31DEB4E7DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{195CADA6-7431-4A33-910A-9D31DEB4E7DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{086B3D15-9626-4390-8E02-970C79C1EB6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{086B3D15-9626-4390-8E02-970C79C1EB6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{086B3D15-9626-4390-8E02-970C79C1EB6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{086B3D15-9626-4390-8E02-970C79C1EB6C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FBAE3A11-73BC-4E40-8D72-7F0CB80D7E79}
+	EndGlobalSection
+EndGlobal
